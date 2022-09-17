@@ -1,13 +1,24 @@
-import Link from 'next/link';
-import styles from './header.module.scss';
+import { SignInButton } from '../SignInButton'
+import styles from './header.module.scss'
+import { ActiveLink } from '../ActiveLink';
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export default function header() {
+export function Header() {
   return (
-    <header className={styles.header}>
-      <Link href="/">
-        <img src="/logo.svg" alt="logo" />
-      </Link>
+    <header className={styles.headerContainer}>
+      <div className={styles.headerContent}>
+        <img src="/images/logo.svg" alt="ig.news" />
+        <nav>
+
+          <ActiveLink href="/" activeClassName={styles.active}>
+            <a>Home</a>
+          </ActiveLink>
+
+          <ActiveLink href="/posts" activeClassName={styles.active}>
+            <a>Posts</a>
+          </ActiveLink>
+        </nav>
+        <SignInButton />
+      </div>
     </header>
-  );
+  )
 }
