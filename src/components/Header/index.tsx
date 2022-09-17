@@ -1,14 +1,12 @@
 import Link from 'next/link';
-
 import styles from './header.module.scss';
 
-export default function Header(): JSX.Element {
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+export default function header() {
   return (
-    <header>
+    <header className={styles.header}>
       <Link href="/">
-        <a>
-          <img src="/logo.svg" alt="logo" className={styles.logo} />
-        </a>
+        <img src="/logo.svg" alt="logo" />
       </Link>
     </header>
   );
